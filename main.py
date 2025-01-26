@@ -47,13 +47,13 @@ def main():
             year = int(input("Yaratilgan yil: "))
             genre = input("Janr: ")
             price = int(input("Narx: "))
-            available = input("Mavjudmi? (ha/yo'q): ").lower() == "ha"
+            available = input("Mavjudmi  : ").lower() == "ha"
             insert_book(cursor, title, author, year, genre, price, available)
             connection.commit()
         elif command == "2":
             show_all_books(cursor)
         elif command == "3":
-            search_type = input("Qidiruv turi (author/genre): ").lower()
+            search_type = input("Qidiruv turi : ").lower()
             search_value = input("Qidiruv qiymati: ")
             search_books_by_author_or_genre(cursor, search_type, search_value)
         elif command == "4":
