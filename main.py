@@ -22,12 +22,9 @@ def main():
     )
 
     cursor = connection.cursor()
-
-    # Ma'lumotlar bazasi yaratish va undan foydalanish
     cursor.execute(f"CREATE DATABASE IF NOT EXISTS {setting.db_name}")
     cursor.execute(f"USE {setting.db_name}")
 
-    # 'Books' jadvalini yaratish
     create_books_table(cursor)
 
     while True:
@@ -83,7 +80,7 @@ def main():
         elif command == "0":
             break
         else:
-            print("Noto'g'ri tanlov!")
+            print("Siz kiritgan buyruq mavjud emas")
 
     cursor.close()
     connection.close()
